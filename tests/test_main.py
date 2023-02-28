@@ -1,4 +1,5 @@
 from sorting import _merged, merge_sorted, quick_sorted, cmp_standard, cmp_reverse, cmp_last_digit
+import hypothesis
 from hypothesis import given
 import hypothesis.strategies as st
 import timeit
