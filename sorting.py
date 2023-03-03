@@ -172,29 +172,28 @@ def quick_sorted(xs, cmp=cmp_standard):
     You should return a sorted version of the input list xs.
     You should not modify the input list xs in any way.
     '''
-    # if len(xs) == 0:
-      # return []
-    # if len(xs) == 1:
-        # return xs
-    # c = Counter(xs)
-    # if len(c) == 1:
-        # return xs
-    # less_than = []
-    # greater_than = []
-    # equal_to = []
-    # pivot = len(xs) - 1
-    #for i in range(len(xs)):
-        # if cmp(xs[i], xs[pivot]) == 1:
-            # greater_than.append(xs[i])
-        # elif cmp(xs[i], xs[pivot]) == 0:
-            # equal_to.append(xs[i])
-        # else:
-            # less_than.append(xs[i])
-    # less_than = quick_sorted(less_than, cmp)
-    # equal_to = quick_sorted(equal_to, cmp)
-    # greater_than = quick_sorted(greater_than, cmp)
+    if len(xs) == 0:
+        return []
+    if len(xs) == 1:
+        return xs
+    c = Counter(xs)
+    if len(c) == 1:
+        return xs
+    less_than = []
+    greater_than = []
+    equal_to = []
+    pivot = len(xs) - 1
+    for i in range(len(xs)):
+        if cmp(xs[i], xs[pivot]) == 1:
+            greater_than.append(xs[i])
+        elif cmp(xs[i], xs[pivot]) == 0:
+            equal_to.append(xs[i])
+        else:
+            less_than.append(xs[i])
+    less_than = quick_sorted(less_than, cmp)
+    equal_to = quick_sorted(equal_to, cmp)
+    greater_than = quick_sorted(greater_than, cmp)
     # return less_than + equal_to + greater_than
-
 
     if len(xs) <= 1:
         return xs
